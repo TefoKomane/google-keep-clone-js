@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Keep Clone</title>
+    <link rel="icon" type="image/png" href="Google_Keep_Logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <nav class="sidebar-nav">
+          <button class="nav-item active" type="button">
+            <img class="nav-icon" src="icons/lightbulb.svg" alt="Notes icon" />
+            <span>Notes</span>
+          </button>
+          <button class="nav-item" type="button">
+            <img class="nav-icon" src="icons/notification.svg" alt="Reminders icon" />
+            <span>Reminders</span>
+          </button>
+          <button class="nav-item" type="button">
+            <img class="nav-icon" src="icons/pencil.svg" alt="Edit labels icon" />
+            <span>Edit Labels</span>
+          </button>
+          <button class="nav-item" type="button">
+            <img class="nav-icon" src="icons/archive.svg" alt="Archive icon" />
+            <span>Archive</span>
+          </button>
+          <button class="nav-item" type="button">
+            <img class="nav-icon" src="icons/trash.svg" alt="Trash icon" />
+            <span>Trash</span>
+          </button>
+        </nav>
+      </aside>
+
+      <div class="main-panel">
+        <header class="topbar">
+          <div class="top-left">
+            <button class="icon-btn menu-btn" aria-label="Open menu" title="Menu">
+              <img src="icons/menu.svg" alt="Menu" />
+            </button>
+
+            <div class="brand">
+              <img class="brand-logo" src="Google_Keep_Logo.png" alt="Google Keep logo" />
+              <span>Keep</span>
+            </div>
+          </div>
+
+          <div class="search-box">
+            <span class="search-icon">⌕</span>
+            <input id="searchInput" type="search" placeholder="Search" />
+          </div>
+        </header>
+
+        <main class="main-area">
+          <section class="composer-wrap">
+            <div class="composer">
+              <input id="noteTitle" type="text" placeholder="Title" />
+              <textarea id="noteText" rows="3" placeholder="Take a note..."></textarea>
+
+              <div class="composer-bottom">
+                <div class="color-picker" aria-label="Note colors">
+                  <button class="color-swatch active" data-color="#fef7a8" title="Yellow" style="background:#fef7a8"></button>
+                  <button class="color-swatch" data-color="#f8d1d1" title="Pink" style="background:#f8d1d1"></button>
+                  <button class="color-swatch" data-color="#d1f1d9" title="Green" style="background:#d1f1d9"></button>
+                  <button class="color-swatch" data-color="#dce7ff" title="Blue" style="background:#dce7ff"></button>
+                  <button class="color-swatch" data-color="#ffffff" title="White" style="background:#ffffff;border:1px solid #ddd"></button>
+                </div>
+
+                <button id="addNoteBtn" class="add-note-btn">Add note</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="notes-section">
+            <div class="section-title-wrap">
+              <h2>Notes</h2>
+            </div>
+            <div id="notesList" class="notes-grid"></div>
+          </section>
+
+          <section class="notes-section archive-section">
+            <div class="section-title-wrap">
+              <h2>Archived</h2>
+            </div>
+            <div id="archivedList" class="notes-grid"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="editModal" class="modal hidden" aria-modal="true" role="dialog" aria-labelledby="editTitleLabel">
+      <div class="modal-card">
+        <h3 id="editTitleLabel">Edit note</h3>
+
+        <input id="editTitle" type="text" placeholder="Title" />
+        <textarea id="editText" rows="6" placeholder="Note text"></textarea>
+
+        <div class="color-picker modal-colors" aria-label="Change note color">
+          <button class="color-swatch modal-swatch active" data-color="#fef7a8" title="Yellow" style="background:#fef7a8"></button>
+          <button class="color-swatch modal-swatch" data-color="#f8d1d1" title="Pink" style="background:#f8d1d1"></button>
+          <button class="color-swatch modal-swatch" data-color="#d1f1d9" title="Green" style="background:#d1f1d9"></button>
+          <button class="color-swatch modal-swatch" data-color="#dce7ff" title="Blue" style="background:#dce7ff"></button>
+          <button class="color-swatch modal-swatch" data-color="#ffffff" title="White" style="background:#ffffff;border:1px solid #ddd"></button>
+        </div>
+
+        <div class="modal-actions">
+          <button id="saveEditBtn" class="save-btn">Save</button>
+          <button id="cancelEditBtn" class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
