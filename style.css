@@ -252,7 +252,7 @@ button {
 
 .add-note-btn,
 .save-btn {
-  background: #fbbc04;
+  background: #fdd663;
   border: none;
   border-radius: 20px;
   padding: 10px 18px;
@@ -321,7 +321,7 @@ button {
 }
 
 .note-tag {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(95, 99, 104, 0.08);
   border-radius: 999px;
   font-size: 0.7rem;
   padding: 4px 8px;
