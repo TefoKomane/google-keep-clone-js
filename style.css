@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  background: #f8f9fa;
   color: #202124;
 }
 
@@ -22,34 +22,40 @@ button {
 .app-shell {
   min-height: 100vh;
   display: flex;
+  background: #f8f9fa;
 }
 
 .sidebar {
-  width: 240px;
-  background: #fff;
+  width: 224px;
+  background: #f8f9fa;
   border-right: 1px solid #e0e0e0;
-  padding: 20px 12px;
+  padding: 18px 10px 20px 0;
   flex-shrink: 0;
 }
 
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  width: 100%;
+  gap: 16px;
+  width: calc(100% - 12px);
   border: none;
   background: transparent;
   color: #5f6368;
   border-radius: 0 24px 24px 0;
-  padding: 12px 16px;
+  padding: 11px 18px 11px 22px;
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.98rem;
+  transition: background 0.15s ease;
+}
+
+.nav-item:hover {
+  background: rgba(95, 99, 104, 0.06);
 }
 
 .nav-item.active {
@@ -79,7 +85,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 24px;
+  padding: 10px 24px;
   background: #fff;
   border-bottom: 1px solid #e0e0e0;
   position: sticky;
@@ -134,6 +140,7 @@ button {
   align-items: center;
   padding: 0 18px;
   height: 46px;
+  box-shadow: inset 0 0 0 1px transparent;
 }
 
 .search-icon {
@@ -166,7 +173,7 @@ button {
   width: min(100%, 650px);
   background: #fff;
   border: 1px solid #dadce0;
-  border-radius: 16px;
+  border-radius: 18px;
   box-shadow: 0 1px 2px rgba(60, 64, 67, 0.15);
   padding: 12px 16px 8px;
 }
@@ -237,7 +244,7 @@ button {
 
 .add-note-btn,
 .save-btn {
-  background: #f1c40f;
+  background: #fbbc04;
   border: none;
   border-radius: 20px;
   padding: 10px 18px;
@@ -264,6 +271,7 @@ button {
   margin: 0;
   font-size: 1.1rem;
   color: #5f6368;
+  font-weight: 600;
 }
 
 .notes-grid {
@@ -273,7 +281,7 @@ button {
 }
 
 .note-card {
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(60, 64, 67, 0.12);
   border-radius: 16px;
   padding: 16px;
   min-height: 180px;
