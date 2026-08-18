@@ -491,18 +491,20 @@ button {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #e0e0e0;
-    padding: 12px 10px;
+    padding: 12px 10px 8px;
   }
 
   .sidebar-nav {
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 8px;
   }
 
   .nav-item {
     border-radius: 18px;
     width: auto;
-    flex: 1 1 140px;
+    flex: 1 1 120px;
+    padding: 10px 12px;
   }
 }
 
@@ -532,9 +534,23 @@ button {
   .composer-bottom {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
+  }
+
+  .reminder-toggle {
+    width: 100%;
   }
 
   .add-note-btn {
     width: 100%;
+  }
+
+  .labels-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .label-form {
+    max-width: none;
   }
 }
