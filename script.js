@@ -346,6 +346,11 @@ function cycleColorForNote(id) {
 }
 
 function renderLabels() {
+  if (!labels.length) {
+    labelsList.innerHTML = '<div class="empty-state">No labels yet. Add one to organize your notes.</div>';
+    return;
+  }
+
   labelsList.innerHTML = labels.map((label) => `
     <div class="label-item">
       <span># ${label}</span>
